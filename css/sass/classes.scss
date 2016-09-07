@@ -1,0 +1,17 @@
+.btn {
+  @include colors($pointdark, $pointyellow);
+  border: none;
+  padding: 10px;
+  font-size: 1em;
+  transition: 0.5s ease;
+  &:hover{
+    @include colors($pointyellow, $pointblue);
+  }
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+}
+
+.btn2 {
+  right: 120px;
+}

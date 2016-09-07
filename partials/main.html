@@ -4,3 +4,29 @@
   save energy, water and material resources.
   </p>
 </section>
+
+
+<button ng-click='toggleSignup(form)' class='btn'> sign up </button>
+<button ng-click='toggleLogin(form)'class='btn btn2'> log in </button>
+
+<form ng-show="form.isLoginOpen" name="loginForm" ng-submit="loginUser(email, password)">
+  <center>Login</center>
+  <label for="email"> E-mail </label>
+    <input type="text" name="email" ng-model="email">
+  <label for="password"> Password </label>
+    <input type="password" name="password" ng-model="password">
+  <button type="submit"> Login </button>
+</form>
+
+<form ng-show="form.isSignupOpen" novalidate name="SignupForm" ng-submit="addUser(form)">
+  <center>Signup</center>
+  <label for="firstname"> First Name </label>
+    <input type="text" id="firstname" ng-model="form.firstname">
+  <label for="lastname"> Last Name </label>
+    <input type="text" id="lastname" ng-model="form.lastname">
+  <label for="email"> E-mail </label>
+    <input type="email" id="email" ng-model="form.email">
+  <label for="password"> Password </label>
+    <input type="password" id="password" ng-model="form.password">
+  <button type="submit"> Submit </button>
+</form>

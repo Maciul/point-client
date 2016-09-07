@@ -365,30 +365,70 @@ textarea {
   font: inherit;
   /* 2 */ }
 
+.btn {
+  color: #112834;
+  background-color: #d9e8a5;
+  border: none;
+  padding: 10px;
+  font-size: 1em;
+  transition: 0.5s ease;
+  position: fixed;
+  right: 0px;
+  bottom: 0px; }
+  .btn:hover {
+    color: #d9e8a5;
+    background-color: #2D5F79; }
+
+.btn2 {
+  right: 120px; }
+
 header {
   color: #A3D9D5;
   display: flex;
   align-items: center;
-  background-color: #d9e8a5; }
+  background-color: #d9e8a5;
+  height: 10%; }
   header h1 {
+    font-size: 1.5em;
     display: inline;
     font-family: 'Josefin Slab', serif;
-    color: #112834; }
+    color: #112834;
+    text-shadow: 1px 1px 10px #183442; }
   header .logo {
-    float: left;
-    width: 120px;
-    height: 50px;
-    margin: 15px 15px;
-    border-radius: 15px;
-    font-size: 18px;
-    line-height: 20px;
-    padding: 10px; }
+    width: 45px;
+    margin: 0px 20px; }
 
 body {
-  background-color: #112834; }
+  background-color: #112834;
+  overflow: hidden; }
 
 main {
   color: #d9e8a5;
-  font-family: 'Raleway','Roboto', sans-serif; }
+  font-family: 'Raleway','Roboto', sans-serif;
+  background-image: url("http://i.huffpost.com/gen/1193575/images/o-CARBON-EMISSIONS-COSTS-facebook.jpg");
+  background-size: cover;
+  height: 90%; }
+  main p {
+    width: 50%;
+    text-align: center; }
+  main form {
+    position: fixed;
+    top: 100px;
+    right: 0px;
+    background-color: #d9e8a5;
+    padding: 20px;
+    color: #112834;
+    font-weight: 600; }
+    main form label {
+      margin-top: 10px;
+      display: block; }
+    main form input {
+      display: block;
+      margin-bottom: 10px; }
+
+section {
+  display: flex;
+  justify-content: center;
+  padding: 20px; }
 
 /*# sourceMappingURL=main.css.map */

@@ -9,28 +9,56 @@ header {
   display: flex;
   align-items: center;
   background-color: #d9e8a5;
+  height: 10%;
   h1 {
+    font-size: 1.5em;
     display: inline;
     font-family: 'Josefin Slab', serif;
     color: $pointdark;
+    text-shadow: 1px 1px 10px #183442;
   }
   .logo {
-    float: left;
-    width: 120px;
-    height: 50px;
-    margin: 15px 15px;
-    border-radius: 15px;
-    font-size: 18px;
-    line-height: 20px;
-    padding: 10px;
+    width: 45px;
+    margin: 0px 20px;
     }
 }
 
 body {
   background-color: $pointdark;
+  overflow: hidden;
 }
 
 main {
   color: $pointyellow;
   font-family: 'Raleway','Roboto', sans-serif;
+  background-image: url('http://i.huffpost.com/gen/1193575/images/o-CARBON-EMISSIONS-COSTS-facebook.jpg');
+  background-size: cover;
+  height: 90%;
+  p {
+    width: 50%;
+    text-align: center;
+  }
+  form {
+    position: fixed;
+    top: 100px;
+    right: 0px;
+    background-color: #d9e8a5;
+    padding: 20px;
+    color: #112834;
+    font-weight: 600;
+    label {
+      margin-top: 10px;
+      display: block;
+    }
+    input {
+      display: block;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
 }
