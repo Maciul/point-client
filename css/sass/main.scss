@@ -1,0 +1,36 @@
+@import "normalize";
+@import "mixins";
+@import "colors";
+@import "font";
+@import "classes";
+
+header {
+  color: $pointlightblue;
+  display: flex;
+  align-items: center;
+  background-color: #d9e8a5;
+  h1 {
+    display: inline;
+    font-family: 'Josefin Slab', serif;
+    color: $pointdark;
+  }
+  .logo {
+    float: left;
+    width: 120px;
+    height: 50px;
+    margin: 15px 15px;
+    border-radius: 15px;
+    font-size: 18px;
+    line-height: 20px;
+    padding: 10px;
+    }
+}
+
+body {
+  background-color: $pointdark;
+}
+
+main {
+  color: $pointyellow;
+  font-family: 'Raleway','Roboto', sans-serif;
+}
