@@ -9,7 +9,7 @@
 <button ng-click='toggleSignup(form)' class='btn'> sign up </button>
 <button ng-click='toggleLogin(form)'class='btn btn2'> log in </button>
 
-<form ng-show="form.isLoginOpen" name="loginForm" ng-submit="loginUser(email, password)">
+<form ng-show="form.isLoginOpen" class='animate-show' name="loginForm" ng-submit="loginUser(email, password)">
   <center>Login</center>
   <label for="email"> E-mail </label>
     <input type="text" name="email" ng-model="email">

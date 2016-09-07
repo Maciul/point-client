@@ -1,4 +1,4 @@
-angular.module("pointApp", ["ui.router"])
+angular.module("pointApp", ["ui.router", "ngAnimate"])
 
   .config(function($stateProvider, $urlRouterProvider) {
 
