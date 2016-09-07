@@ -16,5 +16,4 @@ angular
       form.isLoginOpen = false;
       form.isSignupOpen = !form.isSignupOpen;
     }
-
   }]);

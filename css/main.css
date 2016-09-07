@@ -382,6 +382,9 @@ textarea {
 .btn2 {
   right: 120px; }
 
+.section2 {
+  background-color: white; }
+
 .ng-hide-add {
   animation: 0.5s slideOutRight ease; }
 
@@ -389,6 +392,7 @@ textarea {
 .ng-hide-remove {
   animation: 0.5s slideInRight ease; }
 
+/* Animations css */
 @keyframes slideInRight {
   from {
     -webkit-transform: translate3d(100%, 0, 0);
@@ -438,15 +442,11 @@ header {
     margin: 0px 20px; }
 
 body {
-  background-color: #112834;
-  overflow: hidden; }
+  background-color: #112834; }
 
 main {
   color: #d9e8a5;
-  font-family: 'Raleway','Roboto', sans-serif;
-  background-image: url("http://i.huffpost.com/gen/1193575/images/o-CARBON-EMISSIONS-COSTS-facebook.jpg");
-  background-size: cover;
-  height: 90%; }
+  font-family: 'Raleway','Roboto', sans-serif; }
   main p {
     width: 50%;
     text-align: center; }
@@ -465,9 +465,14 @@ main {
       display: block;
       margin-bottom: 10px; }
 
+.intro {
+  height: 90vh;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/b/bb/Alternative_Energies.jpg");
+  background-size: cover; }
+
 section {
   display: flex;
   justify-content: center;
-  padding: 20px; }
+  height: 100vh; }
 
 /*# sourceMappingURL=main.css.map */

@@ -25,15 +25,12 @@ header {
 
 body {
   background-color: $pointdark;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 main {
   color: $pointyellow;
   font-family: 'Raleway','Roboto', sans-serif;
-  background-image: url('http://i.huffpost.com/gen/1193575/images/o-CARBON-EMISSIONS-COSTS-facebook.jpg');
-  background-size: cover;
-  height: 90%;
   p {
     width: 50%;
     text-align: center;
@@ -57,8 +54,14 @@ main {
   }
 }
 
+.intro {
+  height: 90vh;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/bb/Alternative_Energies.jpg');
+  background-size: cover;
+}
+
 section {
   display: flex;
   justify-content: center;
-  padding: 20px;
+  height: 100vh;
 }

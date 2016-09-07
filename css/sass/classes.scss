@@ -16,10 +16,17 @@
   right: 120px;
 }
 
+.section2 {
+  background-color: white;
+}
+
 .ng-hide-add         { animation:0.5s slideOutRight ease; }
 
 /* when showing the picture */
 .ng-hide-remove      { animation:0.5s slideInRight ease; }
+
+
+/* Animations css */
 
 @keyframes slideInRight {
   from {
