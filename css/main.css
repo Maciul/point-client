@@ -377,13 +377,42 @@ textarea {
   bottom: 0px; }
   .btn:hover {
     color: #d9e8a5;
-    background-color: #2D5F79; }
+    background-color: #112834; }
 
 .btn2 {
   right: 120px; }
 
+.demoButton {
+  color: #d9e8a5;
+  background-color: #112834;
+  display: block;
+  border: none;
+  padding: 15px;
+  font-size: 1.2em;
+  transition: 0.5s ease;
+  border-radius: 15px;
+  border: 1px solid #d9e8a5; }
+  .demoButton:hover {
+    color: #112834;
+    background-color: #d9e8a5;
+    border: 1px solid #112834; }
+
 .section2 {
   background-color: white; }
+
+.intro {
+  height: 90vh;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/b/bb/Alternative_Energies.jpg");
+  background-size: cover; }
+
+.introP {
+  border-radius: 15px;
+  width: 60%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  height: auto;
+  margin-bottom: 40px; }
 
 .ng-hide-add {
   animation: 0.5s slideOutRight ease; }
@@ -430,13 +459,12 @@ header {
   display: flex;
   align-items: center;
   background-color: #d9e8a5;
-  height: 10%; }
+  min-height: 10%; }
   header h1 {
     font-size: 1.5em;
     display: inline;
     font-family: 'Josefin Slab', serif;
-    color: #112834;
-    text-shadow: 1px 1px 10px #183442; }
+    color: #112834; }
   header .logo {
     width: 45px;
     margin: 0px 20px; }
@@ -448,8 +476,8 @@ main {
   color: #d9e8a5;
   font-family: 'Raleway','Roboto', sans-serif; }
   main p {
-    width: 50%;
-    text-align: center; }
+    color: #112834;
+    font-size: 1.1em; }
   main form {
     position: fixed;
     top: 100px;
@@ -465,13 +493,10 @@ main {
       display: block;
       margin-bottom: 10px; }
 
-.intro {
-  height: 90vh;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/b/bb/Alternative_Energies.jpg");
-  background-size: cover; }
-
 section {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   height: 100vh; }
 

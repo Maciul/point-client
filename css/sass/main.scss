@@ -9,14 +9,14 @@ header {
   display: flex;
   align-items: center;
   background-color: #d9e8a5;
-  height: 10%;
+  min-height: 10%;
   h1 {
     font-size: 1.5em;
     display: inline;
     font-family: 'Josefin Slab', serif;
     color: $pointdark;
-    text-shadow: 1px 1px 10px #183442;
   }
+
   .logo {
     width: 45px;
     margin: 0px 20px;
@@ -32,8 +32,9 @@ main {
   color: $pointyellow;
   font-family: 'Raleway','Roboto', sans-serif;
   p {
-    width: 50%;
-    text-align: center;
+    color: $pointdark;
+    font-size: 1.1em;
+
   }
   form {
     position: fixed;
@@ -54,14 +55,10 @@ main {
   }
 }
 
-.intro {
-  height: 90vh;
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/bb/Alternative_Energies.jpg');
-  background-size: cover;
-}
-
 section {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   height: 100vh;
 }

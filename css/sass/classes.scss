@@ -5,7 +5,7 @@
   font-size: 1.2em;
   transition: 0.5s ease;
   &:hover{
-    @include colors($pointyellow, $pointblue);
+    @include colors($pointyellow, $pointdark);
   }
   position: fixed;
   right: 0px;
@@ -16,9 +16,49 @@
   right: 120px;
 }
 
+.demoButton {
+  @include colors($pointyellow, $pointdark);
+  display: block;
+  border: none;
+  padding: 15px;
+  font-size: 1.2em;
+  transition: 0.5s ease;
+  border-radius: 15px;
+  border: 1px solid $pointyellow;
+  &:hover{
+    @include colors($pointdark, $pointyellow);
+    border: 1px solid $pointdark
+  }
+}
+
+#demoSection {
+  
+}
+
 .section2 {
   background-color: white;
 }
+
+.intro {
+  height: 90vh;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/bb/Alternative_Energies.jpg');
+  background-size: cover;
+}
+
+.introP {
+  border-radius: 15px;
+  width: 60%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  height: auto;
+  margin-bottom: 40px;
+}
+
+
+
+
+// ANIMATIONS //
 
 .ng-hide-add         { animation:0.5s slideOutRight ease; }
 
