@@ -1,0 +1,139 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /usr/local/Cellar/node/5.10.1/bin/node /usr/local/bin/firebase deploy
+[debug] CLI Version:  3.0.1
+[debug] Platform:     darwin
+[debug] Node Version: v5.10.1
+[debug] Time:         Thu Sep 08 2016 10:42:30 GMT-0600 (MDT)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/point380-d4eac 
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/point380-d4eac/tokens 
+[error] 
+[error] Error: An unknown error occurred. Please contact support.
+[debug] Error Context: {
+  "requestOptions": {
+    "method": "GET",
+    "json": true,
+    "url": "https://admin.firebase.com/v1/database/point380-d4eac/tokens",
+    "headers": {
+      "authorization": "Bearer ya29.CjNYA0r6e3CdwCPgyM6W5wPKEcxMNK_o2mqQ4fvhq-SNhX0rh2xuqMubMTRh55X_DUNDwoM"
+    }
+  },
+  "body": {
+    "error": {
+      "code": "UNKNOWN_ERROR",
+      "message": "An unknown error occurred. Please contact support."
+    }
+  },
+  "response": {
+    "statusCode": 500,
+    "body": {
+      "error": {
+        "code": "UNKNOWN_ERROR",
+        "message": "An unknown error occurred. Please contact support."
+      }
+    },
+    "headers": {
+      "server": "nginx",
+      "date": "Thu, 08 Sep 2016 16:42:35 GMT",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "97",
+      "connection": "close",
+      "x-content-type-options": "nosniff"
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "admin.firebase.com",
+        "port": 443,
+        "hostname": "admin.firebase.com",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/v1/database/point380-d4eac/tokens",
+        "path": "/v1/database/point380-d4eac/tokens",
+        "href": "https://admin.firebase.com/v1/database/point380-d4eac/tokens"
+      },
+      "method": "GET",
+      "headers": {
+        "authorization": "Bearer ya29.CjNYA0r6e3CdwCPgyM6W5wPKEcxMNK_o2mqQ4fvhq-SNhX0rh2xuqMubMTRh55X_DUNDwoM",
+        "accept": "application/json"
+      }
+    }
+  }
+}
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /usr/local/Cellar/node/5.10.1/bin/node /usr/local/bin/firebase deploy
+[debug] CLI Version:  3.0.1
+[debug] Platform:     darwin
+[debug] Node Version: v5.10.1
+[debug] Time:         Thu Sep 08 2016 10:43:03 GMT-0600 (MDT)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/point380-d4eac 
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/point380-d4eac/tokens 
+[error] 
+[error] Error: An unknown error occurred. Please contact support.
+[debug] Error Context: {
+  "requestOptions": {
+    "method": "GET",
+    "json": true,
+    "url": "https://admin.firebase.com/v1/database/point380-d4eac/tokens",
+    "headers": {
+      "authorization": "Bearer ya29.CjNYA0r6e3CdwCPgyM6W5wPKEcxMNK_o2mqQ4fvhq-SNhX0rh2xuqMubMTRh55X_DUNDwoM"
+    }
+  },
+  "body": {
+    "error": {
+      "code": "UNKNOWN_ERROR",
+      "message": "An unknown error occurred. Please contact support."
+    }
+  },
+  "response": {
+    "statusCode": 500,
+    "body": {
+      "error": {
+        "code": "UNKNOWN_ERROR",
+        "message": "An unknown error occurred. Please contact support."
+      }
+    },
+    "headers": {
+      "server": "nginx",
+      "date": "Thu, 08 Sep 2016 16:43:10 GMT",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "97",
+      "connection": "close",
+      "x-content-type-options": "nosniff"
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "admin.firebase.com",
+        "port": 443,
+        "hostname": "admin.firebase.com",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/v1/database/point380-d4eac/tokens",
+        "path": "/v1/database/point380-d4eac/tokens",
+        "href": "https://admin.firebase.com/v1/database/point380-d4eac/tokens"
+      },
+      "method": "GET",
+      "headers": {
+        "authorization": "Bearer ya29.CjNYA0r6e3CdwCPgyM6W5wPKEcxMNK_o2mqQ4fvhq-SNhX0rh2xuqMubMTRh55X_DUNDwoM",
+        "accept": "application/json"
+      }
+    }
+  }
+}
