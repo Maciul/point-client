@@ -414,6 +414,10 @@ textarea {
   height: auto;
   margin-bottom: 40px; }
 
+.chart {
+  display: block;
+  background-color: #d9e8a5; }
+
 .ng-hide-add {
   animation: 0.5s slideOutRight ease; }
 
@@ -478,7 +482,7 @@ main {
   main p {
     color: #112834;
     font-size: 1.1em; }
-  main form {
+  main .mainForm form {
     position: fixed;
     top: 100px;
     right: 0px;
@@ -486,10 +490,10 @@ main {
     padding: 20px;
     color: #112834;
     font-weight: 600; }
-    main form label {
+    main .mainForm form label {
       margin-top: 10px;
       display: block; }
-    main form input {
+    main .mainForm form input {
       display: block;
       margin-bottom: 10px; }
 
