@@ -1,13 +1,69 @@
-<h1> Point380: Investors Dashboard </h1>
-<section>
-{{greeting}}
 
-<form class='dash'>
-  <label for='year'> Starting Year:
-  <input type='text'>
-  <label for='year'> Company 1:
-  <input type='text'>
+<section class='demoSection'>
+  <h1> Investors Dashboard </h1>
+
+<form class='demoForm'>
+  <label for='year'> Starting Year: </label>
+  <select ng-model='form.year' class='demoYear'>
+    <option value='2007'> 2007 </option>
+    <option value='2008'> 2008 </option>
+    <option value='2009'> 2009 </option>
+    <option value='2010'> 2010 </option>
+  </select>
+
+    <div>
+    <div class="demoFormAlign">
+      <label for='company1'> Company 1</label>
+      <input ng-model='form.company1' class='demoCompany' type='text'>
+    </div>
+    <div class="demoFormAlign">
+      <label for='weight1'> Weight</label>
+      <input ng-model='form.weight1' class='demoWeight' type='number'>
+    </div>
+    <div>
+    <div class="demoFormAlign">
+      <label for='company2'> Company 2</label>
+      <input ng-model='form.company2' class='demoCompany' type='text'>
+    </div>
+    <div class="demoFormAlign">
+      <label for='weight2'> Weight</label>
+      <input ng-model='form.weight2' class='demoWeight' type='number'>
+    </div>
+    <div>
+    <div class="demoFormAlign">
+      <label for='company3'> Company 3</label>
+      <input ng-model='form.company3' class='demoCompany' type='text'>
+    </div>
+    <div class="demoFormAlign">
+      <label for='weight3'> Weight</label>
+      <input ng-model='form.weight3' class='demoWeight' type='number'>
+    </div>
+    <div>
+    <div class="demoFormAlign">
+      <label for='company4'> Company 4</label>
+      <input ng-model='form.company4' class='demoCompany' type='text'>
+    </div>
+    <div class="demoFormAlign">
+      <label for='weight4'> Weight</label>
+      <input ng-model='form.weight4' class='demoWeight' type='number'>
+    </div>
+    <div>
+    <div class="demoFormAlign">
+      <label for='company5'> Company 5</label>
+      <input ng-model='form.company5' class='demoCompany' type='text'>
+    </div>
+    <div class="demoFormAlign">
+      <label for='weight5'> Weight</label>
+      <input ng-model='form.weight5' class='demoWeight' type='number'>
+    </div>
+<button type='submit'> Submit </button>
 </form>
+{{form.company1}}
+
+<br>
+<h2>
+{{form.weight1 + form.weight2 + form.weight3 + form.weight4 + form.weight5}}
+</h2>
 
 <button ng-click='getScienceData()'> Get Data</button>
 </section>
@@ -20,5 +76,5 @@
 </section> -->
 
 <section class='chart'>
-  <nvd3 options='options3' data='data3'></nvd3>
+  <nvd3 options='options3' data='scienceData'></nvd3>
 </section>
