@@ -3,12 +3,12 @@ angular
   .controller('DashboardController', ['$scope','$location', 'DashboardService',
   function($scope, $location, DashboardService) {
     $scope.greeting = 'Hola!';
-    $scope.scienceData = []
-
+    $scope.scienceData = [];
+    $scope.form.weight = form.weight1 + form.weight2 + form.weight3 + form.weight4 + form.weight5;
 
     $scope.getScienceData = function() {
       DashboardService.getScienceData().then(function(data) {
-        console.log(data)
+        console.log(data);
         $scope.scienceData = data;
 
       });
