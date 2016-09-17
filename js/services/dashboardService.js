@@ -3,8 +3,13 @@ angular
   .factory('DashboardService', ['$http', function($http) {
 
     return  {
-      getScienceData: getScienceData
+      getScienceData: getScienceData,
+      formSubmit: formSubmit
     };
+
+    function formSubmit(form) {
+      console.log(form);
+    }
 
     function getScienceData() {
       console.log('something is happening')
@@ -25,9 +30,7 @@ angular
           }
           result.push({values:values, key:'sciencebase1'});
           // result.push({values:values1, key:'sciencebase2'})
-          console.log(values)
-          console.log(result)
-          return result
+          return result;
           // this callback will be called asynchronously
           // when the response is available
         }, function errorCallback(error) {

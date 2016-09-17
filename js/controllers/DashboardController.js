@@ -3,12 +3,12 @@ angular
   .controller('DashboardController', ['$scope','$location', 'DashboardService',
   function($scope, $location, DashboardService) {
     $scope.greeting = 'Hola!';
-    $scope.scienceData = []
-
+    $scope.scienceData = [];
+    $scope.formSubmit = DashboardService.formSubmit;
 
     $scope.getScienceData = function() {
       DashboardService.getScienceData().then(function(data) {
-        console.log(data)
+        console.log(data);
         $scope.scienceData = data;
 
       });
@@ -41,7 +41,7 @@ angular
           yAxis: {
               axisLabel: 'Cumulative Reduction',
               tickFormat: function(d) {
-                return d3.format(',.2f')(d)
+                return d3.format(',.2f')(d);
               },
               axisLabelDistance: 10,
           },

@@ -2,7 +2,9 @@
 <section class='demoSection'>
   <h1> Investors Dashboard </h1>
 
-<form class='demoForm'>
+<!-- FORM FOR GRAPH INFO -->
+
+<form class='demoForm' ng-submit='formSubmit(form)'>
   <label for='year'> Starting Year: </label>
   <select ng-model='form.year' class='demoYear'>
     <option value='2007'> 2007 </option>
@@ -10,7 +12,6 @@
     <option value='2009'> 2009 </option>
     <option value='2010'> 2010 </option>
   </select>
-
     <div>
     <div class="demoFormAlign">
       <label for='company1'> Company 1</label>
@@ -64,7 +65,7 @@
 
 <button ng-click='getScienceData()'> Get Data</button>
 <h2>
-{{form.weight1 + form.weight2 + form.weigh3 + form.weight4 + form.weight5 }}
+{{form.weight1 + form.weight2 + form.weight3 + form.weight4 + form.weight5 }}
 </h2>
 </section>
 <!-- <section class='chart'>
