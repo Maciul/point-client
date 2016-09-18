@@ -18,20 +18,19 @@ angular
     $scope.options3 = {
       chart: {
           type: 'lineChart',
-          height: 500,
+          // height: 500,
           margin : {
-              top: 20,
+              top: 40,
               right: 40,
-              bottom: 40,
+              bottom: 100,
               left: 100
           },
           x: function(d){ return d.x; },
           y: function(d){ return d.y; },
           useInteractiveGuideline: true,
+          duration: 1500,
           forceY:([-10, 20]),
-          xDomain: [2007, 2017],
-          showYAxis: true,
-          showXAxis: true,
+          xDomain: ([2007, 2017]),
           color: (d3.scale.category10().range()),
           dispatch: {
               stateChange: function(e){ console.log("stateChange"); },
@@ -50,28 +49,18 @@ angular
               },
               axisLabelDistance: 10,
           },
-          callback: function(chart){
-              console.log("!!! lineChart callback !!!");
-          }
       },
       title: {
           enable: true,
+
           text: 'Science Base vs Portfolio',
           css: {
-            color: 'darkblue'
+            color: 'darkblue',
+            position: 'absolute',
+            'margin-left': '50vw'
           }
       },
 
-
-      caption: {
-          enable: true,
-          html: '<b>Figure 1. Some awesome text here</b>',
-          css: {
-              'color': 'darkblue',
-              'text-align': 'justify',
-              'margin': '40px 13px 0px 7px'
-          }
-      }
   };
 
 }]);
