@@ -29,7 +29,10 @@ angular
           y: function(d){ return d.y; },
           useInteractiveGuideline: true,
           forceY:([-10, 20]),
-          xDomain: [2007, 2020],
+          xDomain: [2007, 2017],
+          showYAxis: true,
+          showXAxis: true,
+          color: (d3.scale.category10().range()),
           dispatch: {
               stateChange: function(e){ console.log("stateChange"); },
               changeState: function(e){ console.log("changeState"); },
