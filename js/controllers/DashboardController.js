@@ -17,7 +17,7 @@ angular
 
     $scope.options3 = {
       chart: {
-          type: 'lineChart',
+          type: 'lineWithFocusChart',
           // height: 500,
           margin : {
               top: 40,
@@ -30,7 +30,7 @@ angular
           useInteractiveGuideline: true,
           duration: 1500,
           forceY:([-10, 20]),
-          xDomain: ([2007, 2017]),
+
           color: (d3.scale.category10().range()),
           dispatch: {
               stateChange: function(e){ console.log("stateChange"); },
@@ -40,7 +40,6 @@ angular
           },
           xAxis: {
               axisLabel: 'Target Year',
-
           },
           yAxis: {
               axisLabel: 'Cumulative Reduction',
@@ -49,6 +48,11 @@ angular
               },
               axisLabelDistance: 10,
           },
+          y2Axis: {
+            tickFormat: function(d) {
+              return d3.format(',.2f')(d);
+            }
+          }
       },
       title: {
           enable: true,

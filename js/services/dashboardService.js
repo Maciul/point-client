@@ -2,19 +2,25 @@ angular
   .module("pointApp")
   .factory('DashboardService', ['$http', '$q', function($http, $q) {
 
+    var companyData;
+
     return  {
       formSubmit: formSubmit
     };
 
     function formSubmit(form) {
-      var sciencebase = $http.get('https://point380.herokuapp.com/sciencebase/' +form.year),
-      company1 = $http.get('https://point380.herokuapp.com/companies/'+form.company1),
-      company2 = $http.get('https://point380.herokuapp.com/companies/'+form.company2),
-      company3 = $http.get('https://point380.herokuapp.com/companies/'+form.company3),
-      company4 = $http.get('https://point380.herokuapp.com/companies/'+form.company4),
-      company5 = $http.get('https://point380.herokuapp.com/companies/'+form.company5);
+      console.log(form)
+      var promises = [];
 
-      return $q.all([sciencebase, company1, company2, company3, company4, company5]).then(function(data) {
+      promises.push($http.get('https://point380.herokuapp.com/sciencebase/' +form.year))
+
+      Object.keys(form.data).forEach(function(key) {
+        promises.push($http.get('https://point380.herokuapp.com/companies/'+form.data[key]))
+      });
+
+      return $q.all(promises).then(function(data) {
+        companyData = data;
+        console.log(companyData)
         var sciencebase = data[0].data.data[0];
         var year = parseFloat(sciencebase.year);
         var result = [];
@@ -31,7 +37,7 @@ angular
                 values.push({x: key, y: result[0].values[i].y});
               }
             }
-        // CONTINUE WITH ASSIGNING NUMBERS FOR OTHER YEARS
+        // CONTINUE WITH ASSIGNING VALUES FOR OTHER YEARS
               } else if(emissions[key] !== 0 && emissions[key] !== null && baseNumber !== 0) {
               values.push({x: key, y: ((emissions[key] /  baseNumber) -1) * 100});
               }
@@ -44,6 +50,8 @@ angular
         });
         result.push({values: values, key: 'Science Base'});
         values = [];
+
+// LOOP THROUGH COMPANIES TO GET GRAPH DATA
 
           for (var i = 1; i < data.length; i++) {
             if(data[i].data.data !== null) {
