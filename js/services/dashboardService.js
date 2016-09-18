@@ -1,40 +1,92 @@
 angular
   .module("pointApp")
-  .factory('DashboardService', ['$http', function($http) {
+  .factory('DashboardService', ['$http', '$q', function($http, $q) {
 
     return  {
-      getScienceData: getScienceData,
+      // getScienceData: getScienceData,
       formSubmit: formSubmit
     };
 
     function formSubmit(form) {
-      console.log(form);
-    }
+      var sciencebase = $http.get('https://point380.herokuapp.com/sciencebase/' +form.year),
+      company1 = $http.get('https://point380.herokuapp.com/companies/'+form.company1),
+      company2 = $http.get('https://point380.herokuapp.com/companies/'+form.company2),
+      company3 = $http.get('https://point380.herokuapp.com/companies/'+form.company3),
+      company4 = $http.get('https://point380.herokuapp.com/companies/'+form.company4),
+      company5 = $http.get('https://point380.herokuapp.com/companies/'+form.company5);
 
-    function getScienceData() {
-      console.log('something is happening')
-      return $http({
-        method: 'GET',
-        url: 'https://point380.herokuapp.com/sciencebase/2008'
-        }).then(function (data) {
-          var cleanData = data.data.data[0];
-          var values = [];
-          var values1 = [];
-          var result = []
-          var year = parseFloat(cleanData.year);
-          for (var i = 0; i < cleanData.target.length; i++) {
-            values.push({x: year + i, y: parseFloat(cleanData.target[i])});
-          }
-          for (i = 0; i < cleanData.target.length; i++) {
-            values1.push({x: year + i, y: parseFloat(cleanData.target[i]) + 10});
-          }
-          result.push({values:values, key:'sciencebase1'});
-          // result.push({values:values1, key:'sciencebase2'})
-          return result;
-          // this callback will be called asynchronously
-          // when the response is available
-        }, function errorCallback(error) {
-          console.log(error);
+      return $q.all([sciencebase, company1, company2, company3, company4, company5]).then(function(data) {
+        var sciencebase = data[0].data.data[0];
+        var company1 = data[1].data.data;
+        var company2 = data[2].data.data;
+        var company3 = data[3].data.data;
+        var company4 = data[4].data.data;
+        var company5 = data[5].data.data;
+
+
+        var year = parseFloat(sciencebase.year);
+        var result = [];
+        var values = [];
+        var priorValue = 0;
+        console.log(company1)
+        console.log(company2)
+        sciencebase.target.forEach(function(item, index) {
+          values.push({x: year + index, y: parseFloat(item)});
         });
-      }
+        result.push({values: values, key: 'Science Base'});
+        values = [];
+        emissions = company1.emissionsgdp[0];
+
+        Object.keys(emissions).forEach(function(key) {
+          if(emissions[key-1] !== 0 && emissions[key] !== 0 && emissions[key] !== null && emissions[key-1] !== null) {
+          values.push({x: key, y: priorValue + ((emissions[key] /  emissions[key-1]) -1) * 100});
+          priorValue = priorValue + ((emissions[key] /  emissions[key-1]) -1) * 100;
+        }
+      });
+        result.push({values: values, key: company1.name});
+        // values = [];
+        // emissions = company2.emissionsgdp[0];
+      //
+      //   Object.keys(emissions).forEach(function(key) {
+      //     if(emissions[key-1] !== 0 && emissions[key] !== 0 && emissions[key] !== null && emissions[key-1] !== null) {
+      //     values.push({x: key, y: ((emissions[key] /  emissions[key-1]) -1) * 100});
+      //     priorValue = ((emissions[key] /  emissions[key-1]) -1) * 100;
+      //   }
+      //   });
+      //   result.push({values: values, key: company2.name});
+      //   values = [];
+      //   emissions = company3.emissionsgdp[0];
+      //
+      //   Object.keys(emissions).forEach(function(key) {
+      //     if(emissions[key-1] !== 0 && emissions[key] !== 0 && emissions[key] !== null && emissions[key-1] !== null) {
+      //     values.push({x: key, y: ((emissions[key] /  emissions[key-1]) -1) * 100});
+      //     priorValue = ((emissions[key] /  emissions[key-1]) -1) * 100;
+      //   }
+      //   });
+      //   result.push({values: values, key: company3.name});
+      //   values = [];
+      //   emissions = company4.emissionsgdp[0];
+      //
+      //   Object.keys(emissions).forEach(function(key) {
+      //     if(emissions[key-1] !== 0 && emissions[key] !== 0 && emissions[key] !== null && emissions[key-1] !== null) {
+      //     values.push({x: key, y: ((emissions[key] /  emissions[key-1]) -1) * 100});
+      //     priorValue = ((emissions[key] /  emissions[key-1]) -1) * 100;
+      //   }
+      // });
+      //   result.push({values: values, key: company4.name});
+      //   values = [];
+      //   emissions = company5.emissionsgdp[0];
+      //
+      //   Object.keys(emissions).forEach(function(key) {
+      //   if(emissions[key-1] !== 0 && emissions[key] !== 0 && emissions[key] !== null && emissions[key-1] !== null) {
+      //     values.push({x: key, y: ((emissions[key] /  emissions[key-1]) -1) * 100});
+      //     priorValue = ((emissions[key] /  emissions[key-1]) -1) * 100;
+      //   }
+      // });
+      //   result.push({values: values, key: company5.name});
+      //   values = [];
+
+        return result
+    });
+    }
   }]);

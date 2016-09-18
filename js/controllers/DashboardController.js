@@ -4,13 +4,14 @@ angular
   function($scope, $location, DashboardService) {
     $scope.greeting = 'Hola!';
     $scope.scienceData = [];
-    $scope.formSubmit = DashboardService.formSubmit;
+    // $scope.formSubmit = DashboardService.formSubmit;
+    $scope.form = {};
 
-    $scope.getScienceData = function() {
-      DashboardService.getScienceData().then(function(data) {
+
+    $scope.formSubmit = function(form) {
+      DashboardService.formSubmit(form).then(function(data) {
         console.log(data);
         $scope.scienceData = data;
-
       });
     };
 
@@ -28,6 +29,7 @@ angular
           y: function(d){ return d.y; },
           useInteractiveGuideline: true,
           forceY:([-10, 20]),
+          xDomain: [2007, 2020],
           dispatch: {
               stateChange: function(e){ console.log("stateChange"); },
               changeState: function(e){ console.log("changeState"); },
