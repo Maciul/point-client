@@ -29,7 +29,7 @@ angular
           y: function(d){ return d.y; },
           useInteractiveGuideline: true,
           duration: 1500,
-          forceY:([-10, 20]),
+          forceY:([-10, 0]),
 
           color: (d3.scale.category10().range()),
           dispatch: {
@@ -56,7 +56,6 @@ angular
       },
       title: {
           enable: true,
-
           text: 'Science Base vs Portfolio',
           css: {
             color: 'darkblue',
