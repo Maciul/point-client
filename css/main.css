@@ -385,6 +385,7 @@ textarea {
 .demoButton {
   color: #d9e8a5;
   background-color: #112834;
+  margin-bottom: 15px;
   display: block;
   border: none;
   padding: 15px;
@@ -428,8 +429,10 @@ textarea {
   font-weight: 600; }
 
 .demoForm {
+  background-color: rgba(17, 40, 52, 0.6);
   margin-left: 20px;
-  padding: 20px; }
+  padding: 20px;
+  width: 50%; }
 
 label {
   margin-bottom: 10px;
@@ -444,10 +447,13 @@ select {
   margin-bottom: 10px; }
 
 .demoSection {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/b/bb/Alternative_Energies.jpg");
   display: block;
+  background-size: cover;
   height: 90vh; }
   .demoSection h1 {
-    margin-left: 30px; }
+    margin: 0;
+    padding: 20px; }
 
 .demoCompany {
   display: inline;

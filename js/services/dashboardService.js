@@ -89,9 +89,9 @@ angular
         baseNumber = 0;
       }
     }
-      console.log(values)
+
         getPorfolioData();
-        result.push({values: values, key: 'Portfolio'})
+        result.push({values: values, key: 'Portfolio'});
         return result;
     });
     }
