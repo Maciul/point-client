@@ -9,7 +9,6 @@ angular
     };
 
     function formSubmit(form) {
-      console.log(form);
       var promises = [];
 
       promises.push($http.get('https://point380.herokuapp.com/sciencebase/' +form.year));
@@ -18,8 +17,9 @@ angular
         promises.push($http.get('https://point380.herokuapp.com/companies/'+form.data[key]));
       });
 
+// DATABASE CALL WITH SCIENCE BASE YEAR AND COMPANIES FROM FORM
       return $q.all(promises).then(function(data) {
-
+// INSERT WEIGHTS INTO EACH COMPANY DATA
         for (var z = 1; z < data.length; z++) {
           data[z].data.data.weight = (form.weight[z] / 100);
         }
@@ -32,7 +32,9 @@ angular
         var denominator = {};
         var portfolio = [];
         var baseNumber = 0;
-        console.log(data)
+        var scienceBaseStart = 0;
+
+//FUNCTION USED TO SET BASE YEAR AND GET COMPANY GRAPH VALUES
         getCompanyGraphData = function() {
           Object.keys(emissions).forEach(function(key) {
             if(emissions[key] !== 0 && emissions[key] !== null && baseNumber === 0 && key >= year) {
@@ -40,12 +42,13 @@ angular
 // SET GRAPH START VALUE TO CURRENT SCIENCE BASE VALUE.
             for (var i = 0; i < result[0].values.length; i++) {
               if (result[0].values[i].x == key) {
+                scienceBaseStart = result[0].values[i].y;
                 values.push({x: key, y: result[0].values[i].y});
               }
             }
 // CONTINUE WITH ASSIGNMENT CUMULATIVE REDUCTION VALUES
               } else if(emissions[key] !== 0 && emissions[key] !== null && baseNumber !== 0) {
-                cumReduction = ((emissions[key] /  baseNumber) -1) * 100;
+                cumReduction = (((emissions[key] /  baseNumber) -1) * 100) + scienceBaseStart;
 
               values.push({x: key, y: cumReduction});
 
