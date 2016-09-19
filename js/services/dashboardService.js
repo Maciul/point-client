@@ -21,7 +21,7 @@ angular
       return $q.all(promises).then(function(data) {
 
         for (var z = 1; z < data.length; z++) {
-          data[z].data.data.weight = form.weight[z];
+          data[z].data.data.weight = (form.weight[z] / 100);
         }
 
         var sciencebase = data[0].data.data[0];
@@ -32,7 +32,7 @@ angular
         var denominator = {};
         var portfolio = [];
         var baseNumber = 0;
-
+        console.log(data)
         getCompanyGraphData = function() {
           Object.keys(emissions).forEach(function(key) {
             if(emissions[key] !== 0 && emissions[key] !== null && baseNumber === 0 && key >= year) {
@@ -50,11 +50,11 @@ angular
               values.push({x: key, y: cumReduction});
 
               if (!numerator[key]) {
-                numerator[key] = (weight * scopeEmission[key] * cumReduction);
+                numerator[key] = weight * scopeEmission[key] * (cumReduction);
                 denominator[key] = scopeEmission[key] * weight;
 
               } else {
-                numerator[key] += weight * scopeEmission[key] * cumReduction;
+                numerator[key] += weight * scopeEmission[key] * (cumReduction);
                 denominator[key] += scopeEmission[key] * weight;
               }
               }
@@ -66,7 +66,6 @@ angular
             values.push({x:key, y: (numerator[key] / denominator[key])});
       });
     };
-
         sciencebase.target.forEach(function(item, index) {
           values.push({x: year + index, y: parseFloat(item)});
         });
