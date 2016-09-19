@@ -395,6 +395,17 @@ textarea {
   border: 1px solid #d9e8a5; }
   .demoButton:hover {
     color: #112834;
+    background-color: #d9e8a5; }
+
+.dashButton {
+  color: #d9e8a5;
+  background-color: #112834;
+  border-radius: 15px;
+  border: 1px solid #d9e8a5;
+  border: none;
+  padding: 15px; }
+  .dashButton:hover {
+    color: #112834;
     background-color: #d9e8a5;
     border: 1px solid #112834; }
 
@@ -476,6 +487,18 @@ select {
 .demoFormAlign {
   display: inline-block;
   margin-right: 10px; }
+
+.green {
+  color: green;
+  margin: 0; }
+
+.red {
+  color: red;
+  margin: 0; }
+
+.hideButton {
+  opacity: 0.65;
+  cursor: not-allowed; }
 
 .ng-hide-add {
   animation: 0.5s slideOutRight ease; }

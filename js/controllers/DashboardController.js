@@ -59,8 +59,11 @@ angular
           text: 'Science Base vs Portfolio',
           css: {
             color: 'darkblue',
+            padding: '10px',
+            'font-size': '1.5rem',
             position: 'absolute',
-            'margin-left': '50vw'
+            'margin-left': '10vw',
+
           }
       },
 

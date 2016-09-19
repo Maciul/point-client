@@ -57,17 +57,13 @@
       <label for='weight5'> Weight</label>
       <input ng-model='form.weight[5]' class='demoWeight' type='number'>
     </div>
-<button type='submit'> Submit </button>
+<button
+ class='dashButton'
+ ng-class='{hideButton: form.weight[1] + form.weight[2] + form.weight[3] + form.weight[4] + form.weight[5] !== 100}'
+ type='submit'> Submit </button>
 </form>
 
-<br>
-
-
-<button ng-click='formSubmit()'> Get Data</button>
-<h2>
-
-{{form.weight}}
-</h2>
+<h6> *weights must equal 100% </h6>
 </section>
 <!-- <section class='chart'>
   <nvd3 options="options" data="data"></nvd3>
