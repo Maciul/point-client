@@ -1,4 +1,4 @@
-angular.module("pointApp", ["ui.router", "ngAnimate", "nvd3"])
+angular.module("pointApp", ["ui.router", "ngAnimate", "nvd3", "siyfion.sfTypeahead"])
 
   .config(function($stateProvider, $urlRouterProvider) {
 
@@ -14,5 +14,10 @@ angular.module("pointApp", ["ui.router", "ngAnimate", "nvd3"])
           url: '/dash',
           templateUrl: 'partials/dashboard.html',
           controller: 'DashboardController'
+        })
+        .state('/form', {
+          url: '/form',
+          templateUrl: 'partials/form.html',
+          controller: 'TypeaheadController'
         })
       });
