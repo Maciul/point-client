@@ -12,6 +12,7 @@ angular
       DashboardService.formSubmit(form).then(function(data) {
         console.log(data);
         $scope.scienceData = data;
+        $scope.form = {};
       });
     };
 
@@ -29,9 +30,9 @@ angular
           y: function(d){ return d.y; },
           useInteractiveGuideline: true,
           duration: 1500,
-          forceY:([-10, 0]),
+          forceY:([-10, 10]),
 
-          color: (d3.scale.category10().range()),
+          color: ['#00bfff','#00ced1', '#ff69b4', '#daa520', '#adff2f' ],
           dispatch: {
               stateChange: function(e){ console.log("stateChange"); },
               changeState: function(e){ console.log("changeState"); },

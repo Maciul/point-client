@@ -19,6 +19,7 @@ angular
 
 // DATABASE CALL WITH SCIENCE BASE YEAR AND COMPANIES FROM FORM
       return $q.all(promises).then(function(data) {
+        console.log(data)
 // INSERT WEIGHTS INTO EACH COMPANY DATA
         for (var z = 1; z < data.length; z++) {
           data[z].data.data.weight = (form.weight[z] / 100);
@@ -29,50 +30,94 @@ angular
         var result = [];
         var values = [];
         var numerator = {};
+        var numeratorBaseYr = {};
+        var numeratorTargetYr = {};
+        var numeratorGap = {};
         var denominator = {};
         var portfolio = [];
         var baseNumber = 0;
         var scienceBaseStart = 0;
 
 //FUNCTION USED TO SET BASE YEAR AND GET COMPANY GRAPH VALUES
+
         getCompanyGraphData = function() {
           Object.keys(emissions).forEach(function(key) {
             if(emissions[key] !== 0 && emissions[key] !== null && baseNumber === 0 && key >= year) {
               baseNumber = emissions[key];
+
 // SET GRAPH START VALUE TO CURRENT SCIENCE BASE VALUE.
+
             for (var i = 0; i < result[0].values.length; i++) {
               if (result[0].values[i].x == key) {
                 scienceBaseStart = result[0].values[i].y;
                 values.push({x: key, y: result[0].values[i].y});
               }
             }
+
 // CONTINUE WITH ASSIGNMENT CUMULATIVE REDUCTION VALUES
+
               } else if(emissions[key] !== 0 && emissions[key] !== null && baseNumber !== 0) {
                 cumReduction = (((emissions[key] /  baseNumber) -1) * 100) + scienceBaseStart;
 
               values.push({x: key, y: cumReduction});
 
               if (!numerator[key]) {
+//PORTFOLIO
                 numerator[key] = weight * scopeEmission[key] * (cumReduction);
                 denominator[key] = scopeEmission[key] * weight;
+// TARGET
+                numeratorBaseYr = weight * scopeEmission[key] * dbBaseYr;
+                numeratorGap = weight * scopeEmission[key] * dbGap;
+                numeratorTargetYr  = weight * scopeEmission[key] * dbTargetYr;
+                denominatorTarget = scopeEmission[key] * weight;
 
               } else {
+// PORTFOLIO
                 numerator[key] += weight * scopeEmission[key] * (cumReduction);
                 denominator[key] += scopeEmission[key] * weight;
+
+// TARGET
+                numeratorBaseYr += weight * scopeEmission[key] * dbBaseYr;
+                numeratorGap += weight * scopeEmission[key] * dbGap;
+                numeratorTargetYr += weight * scopeEmission[key] * dbTargetYr;
+                denominatorTarget += scopeEmission[key] * weight;
               }
               }
           });
+          result.push({values: values, key: companyName});
+          values = [];
+          baseNumber = 0;
         };
 
         getPorfolioData = function() {
           Object.keys(numerator).forEach(function(key) {
             values.push({x:key, y: (numerator[key] / denominator[key])});
-      });
-    };
+          });
+            result.push({values: values, key: 'Portfolio', color: '#dc143c'});
+        };
+
+        getTargetData = function() {
+            targetBaseYear = (Math.round(numeratorBaseYr / denominatorTarget));
+            console.log((numeratorGap / denominatorTarget) / 100);
+            targetGap = (numeratorGap / denominatorTarget) / 100;
+            targetYear = Math.round(numeratorTargetYr / denominatorTarget);
+            for (var i = 0; i < result[0].values.length; i++) {
+              if (result[0].values[i].x == targetYear) {
+                targetYearValue = result[0].values[i].y * targetGap;
+              }
+            }
+            result.push(
+              { values:[{ x: targetBaseYear, y: 0},{ x: targetYear, y: targetYearValue}],
+                key: 'Target',
+                color: '#ffff00'
+            });
+        };
+
+
         sciencebase.target.forEach(function(item, index) {
           values.push({x: year + index, y: parseFloat(item)});
         });
-        result.push({values: values, key: 'Science Base'});
+        result.push({values: values, key: 'Science Base', color: '#006400'});
         values = [];
 
 // LOOP THROUGH COMPANIES TO GET GRAPH DATA
@@ -84,16 +129,20 @@ angular
           scopeEmission = data[i].data.data.emissions[0];
           emissions = data[i].data.data.emissionsgdp[0];
 
+// TARGET LINE VARIABLES
+
+          dbBaseYr = data[i].data.data.target[0].base;
+          dbGap = data[i].data.data.target[0].gap2EIA;
+          dbTargetYr = data[i].data.data.target[0].target;
+
         getCompanyGraphData();
 
-        result.push({values: values, key: companyName});
-        values = [];
-        baseNumber = 0;
+
       }
     }
 
         getPorfolioData();
-        result.push({values: values, key: 'Portfolio'});
+        getTargetData();
         return result;
     });
     }
