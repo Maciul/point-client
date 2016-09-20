@@ -393,6 +393,8 @@ textarea {
   transition: 0.5s ease;
   border-radius: 15px;
   border: 1px solid #d9e8a5; }
+  .demoButton:focus {
+    outline: 0; }
   .demoButton:hover {
     color: #112834;
     background-color: #d9e8a5; }
@@ -404,6 +406,8 @@ textarea {
   border: 1px solid #d9e8a5;
   border: none;
   padding: 15px; }
+  .dashButton:focus {
+    outline: 0; }
   .dashButton:hover {
     color: #112834;
     background-color: #d9e8a5;

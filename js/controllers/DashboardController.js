@@ -4,11 +4,11 @@ angular
   function($scope, $location, DashboardService) {
     $scope.greeting = 'Hola!';
     $scope.scienceData = [];
-    // $scope.formSubmit = DashboardService.formSubmit;
     $scope.form = {};
 
 
     $scope.formSubmit = function(form) {
+      console.log(form)
       DashboardService.formSubmit(form).then(function(data) {
         console.log(data);
         $scope.scienceData = data;

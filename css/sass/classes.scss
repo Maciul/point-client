@@ -26,6 +26,9 @@
   transition: 0.5s ease;
   border-radius: 15px;
   border: 1px solid $pointyellow;
+  &:focus {
+    outline:0;
+  }
   &:hover{
     @include colors($pointdark, $pointyellow);
     // border: 1px solid $pointdark
@@ -38,6 +41,9 @@
   border: 1px solid $pointyellow;
   border: none;
   padding: 15px;
+  &:focus {
+    outline:0;
+  }
   &:hover{
     @include colors($pointdark, $pointyellow);
     border: 1px solid $pointdark
