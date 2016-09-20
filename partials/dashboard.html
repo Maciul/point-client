@@ -3,7 +3,9 @@
   <h1> Investors Dashboard </h1>
 
 <!-- FORM FOR GRAPH INFO -->
+
 <div ng-controller='TypeaheadController' >
+  <img src='images/formLoad.gif' id='loadGif' ng-if='!exampleOptions' alt='loading'>
 <form ng-if='exampleOptions' class='demoForm' name='dashForm' ng-submit='formSubmit(form)'>
   <label for='year'> Starting Year: </label>
   <select ng-model='form.year' class='demoYear'>

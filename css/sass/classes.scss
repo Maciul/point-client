@@ -150,6 +150,13 @@ select {
   cursor: not-allowed;
 }
 
+#loadGif {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .tt-menu {
 background-color: #d9e8a5;
 color: $pointdark;
