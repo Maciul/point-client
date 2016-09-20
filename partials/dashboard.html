@@ -3,8 +3,8 @@
   <h1> Investors Dashboard </h1>
 
 <!-- FORM FOR GRAPH INFO -->
-
-<form class='demoForm' name='dashForm' ng-submit='formSubmit(form)'>
+<div ng-controller='TypeaheadController' >
+<form ng-if='exampleOptions' class='demoForm' name='dashForm' ng-submit='formSubmit(form)'>
   <label for='year'> Starting Year: </label>
   <select ng-model='form.year' class='demoYear'>
     <option value='2007'> 2007 </option>
@@ -15,7 +15,7 @@
     <div>
     <div class="demoFormAlign">
       <label for='company1'> Company 1</label>
-      <input ng-model='form.data[0]' class='demoCompany' type='text'>
+      <input class="sfTypeahead demoCompany" options="exampleOptions" datasets="exampleData" ng-model='form.data[0]' type='text'>
     </div>
     <div class="demoFormAlign">
       <label for='weight1'> Weight</label>
@@ -24,7 +24,7 @@
     <div>
     <div class="demoFormAlign">
       <label for='company2'> Company 2</label>
-      <input ng-model='form.data[1]' class='demoCompany' type='text'>
+      <input class="sfTypeahead demoCompany" options="exampleOptions" datasets="exampleData" ng-model='form.data[1]' type='text'>
     </div>
     <div class="demoFormAlign">
       <label for='weight2'> Weight</label>
@@ -33,7 +33,7 @@
     <div>
     <div class="demoFormAlign">
       <label for='company3'> Company 3</label>
-      <input ng-model='form.data[2]' class='demoCompany' type='text'>
+      <input class="sfTypeahead demoCompany" options="exampleOptions" datasets="exampleData" ng-model='form.data[2]' type='text'>
     </div>
     <div class="demoFormAlign">
       <label for='weight3'> Weight</label>
@@ -42,7 +42,7 @@
     <div>
     <div class="demoFormAlign">
       <label for='company4'> Company 4</label>
-      <input ng-model='form.data[3]' class='demoCompany' type='text'>
+      <input class="sfTypeahead demoCompany" options="exampleOptions" datasets="exampleData" ng-model='form.data[3]' type='text'>
     </div>
     <div class="demoFormAlign">
       <label for='weight4'> Weight</label>
@@ -51,7 +51,7 @@
     <div>
     <div class="demoFormAlign">
       <label for='company5'> Company 5</label>
-      <input ng-model='form.data[4]' class='demoCompany' type='text'>
+      <input class="sfTypeahead demoCompany" options="exampleOptions" datasets="exampleData" ng-model='form.data[4]' type='text'>
     </div>
     <div class="demoFormAlign">
       <label for='weight5'> Weight</label>
@@ -62,7 +62,7 @@
  ng-class='{hideButton: form.weight[1] + form.weight[2] + form.weight[3] + form.weight[4] + form.weight[5] !== 100}'
  type='submit'> Submit </button>
 </form>
-
+</div>
 <h6> *weights must equal 100% </h6>
 </section>
 <!-- <section class='chart'>

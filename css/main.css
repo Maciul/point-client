@@ -467,7 +467,6 @@ select {
     padding: 20px; }
 
 .demoCompany {
-  display: inline;
   border: none;
   border-radius: 5px;
   width: 25vw; }
@@ -499,6 +498,12 @@ select {
 .hideButton {
   opacity: 0.65;
   cursor: not-allowed; }
+
+.tt-menu {
+  background-color: #d9e8a5;
+  padding: 0 20px;
+  color: #112834;
+  border-radius: 5px; }
 
 .ng-hide-add {
   animation: 0.5s slideOutRight ease; }

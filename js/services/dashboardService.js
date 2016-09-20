@@ -2,25 +2,33 @@ angular
   .module("pointApp")
   .factory('DashboardService', ['$http', '$q', function($http, $q) {
 
-    var companyData;
-
     return  {
       formSubmit: formSubmit
     };
 
     function formSubmit(form) {
+      console.log(form)
       var promises = [];
 
       promises.push($http.get('https://point380.herokuapp.com/sciencebase/' +form.year));
 
       Object.keys(form.data).forEach(function(key) {
-        promises.push($http.get('https://point380.herokuapp.com/companies/'+form.data[key]));
+        if (typeof(form.data[key]) == 'object') {
+          promises.push($http.get('https://point380.herokuapp.com/companies/'+form.data[key].name));
+        } else if (form.data[key]) {
+          promises.push($http.get('https://point380.herokuapp.com/companies/'+form.data[key]));
+        } else {
+          console.log('empty')
+        }
       });
 
 // DATABASE CALL WITH SCIENCE BASE YEAR AND COMPANIES FROM FORM
+
       return $q.all(promises).then(function(data) {
         console.log(data)
+
 // INSERT WEIGHTS INTO EACH COMPANY DATA
+
         for (var z = 1; z < data.length; z++) {
           data[z].data.data.weight = (form.weight[z] / 100);
         }
