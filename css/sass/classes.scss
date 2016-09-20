@@ -151,10 +151,27 @@ select {
 }
 
 .tt-menu {
-  background-color: #d9e8a5;
-padding: 0 20px;
+background-color: #d9e8a5;
 color: $pointdark;
 border-radius: 5px;
+}
+
+.tt-suggestion {
+  padding: 3px 20px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.tt-suggestion:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: #0097cf;
+}
+
+.tt-suggestion.tt-cursor {
+  color: #fff;
+  background-color: #0097cf;
+
 }
 
 

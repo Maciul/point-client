@@ -144,8 +144,6 @@ angular
           dbTargetYr = data[i].data.data.target[0].target;
 
         getCompanyGraphData();
-
-
       }
     }
 
