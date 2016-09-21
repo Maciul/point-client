@@ -400,17 +400,18 @@ textarea {
     background-color: #d9e8a5; }
 
 .dashButton {
-  color: #d9e8a5;
-  background-color: #112834;
+  color: #112834;
+  background-color: #d9e8a5;
   border-radius: 15px;
   border: 1px solid #d9e8a5;
   border: none;
-  padding: 15px; }
+  padding: 15px;
+  float: right; }
   .dashButton:focus {
     outline: 0; }
   .dashButton:hover {
-    color: #112834;
-    background-color: #d9e8a5;
+    color: #d9e8a5;
+    background-color: #112834;
     border: 1px solid #112834; }
 
 .section2 {
@@ -419,7 +420,11 @@ textarea {
 .intro {
   height: 90vh;
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/b/bb/Alternative_Energies.jpg");
-  background-size: cover; }
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
 
 .introP {
   border-radius: 15px;
@@ -447,7 +452,7 @@ textarea {
   background-color: rgba(17, 40, 52, 0.6);
   margin-left: 20px;
   padding: 20px;
-  width: 50%; }
+  width: 50vw; }
 
 label {
   margin-bottom: 10px;
@@ -459,11 +464,14 @@ input {
 
 select {
   display: block;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  margin: 0 auto; }
+
+.alignCenter {
+  text-align: center; }
 
 .demoSection {
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/b/bb/Alternative_Energies.jpg");
-  display: block;
   background-size: cover;
   height: 90vh; }
   .demoSection h1 {
@@ -489,7 +497,7 @@ select {
 
 .demoFormAlign {
   display: inline-block;
-  margin-right: 10px; }
+  margin-left: 10px; }
 
 .green {
   color: green;
@@ -508,6 +516,10 @@ select {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); }
+
+.dashFormAlign {
+  display: flex;
+  justify-content: center; }
 
 .tt-menu {
   background-color: #d9e8a5;
@@ -568,6 +580,9 @@ select {
   -webkit-animation-name: slideOutRight;
   animation-name: slideOutRight; }
 
+a {
+  text-decoration: none; }
+
 header {
   color: #A3D9D5;
   display: flex;
@@ -597,7 +612,6 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   height: 100vh; }
 
 /*# sourceMappingURL=main.css.map */

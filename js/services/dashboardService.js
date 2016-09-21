@@ -7,7 +7,6 @@ angular
     };
 
     function formSubmit(form) {
-      console.log(form)
       var promises = [];
 
       promises.push($http.get('https://point380.herokuapp.com/sciencebase/' +form.year));
@@ -101,7 +100,7 @@ angular
           Object.keys(numerator).forEach(function(key) {
             values.push({x:key, y: (numerator[key] / denominator[key])});
           });
-            result.push({values: values, key: 'Portfolio', color: '#dc143c'});
+            result.push({values: values, key: 'Portfolio'});
         };
 
         getTargetData = function() {
@@ -116,8 +115,7 @@ angular
             }
             result.push(
               { values:[{ x: targetBaseYear, y: 0},{ x: targetYear, y: targetYearValue}],
-                key: 'Target',
-                color: '#ffff00'
+                key: 'Target'
             });
         };
 
@@ -146,7 +144,6 @@ angular
         getCompanyGraphData();
       }
     }
-
         getPorfolioData();
         getTargetData();
         return result;

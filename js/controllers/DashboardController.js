@@ -5,12 +5,13 @@ angular
     $scope.greeting = 'Hola!';
     $scope.scienceData = [];
     $scope.form = {};
+    $scope.portfolio = [];
 
 
     $scope.formSubmit = function(form) {
       console.log(form)
+      $scope.portfolio = form.data;
       DashboardService.formSubmit(form).then(function(data) {
-        console.log(data);
         $scope.scienceData = data;
         $scope.form = {};
       });
@@ -32,7 +33,7 @@ angular
           duration: 1500,
           forceY:([-10, 10]),
 
-          color: ['#00bfff','#00ced1', '#ff69b4', '#daa520', '#adff2f' ],
+          color: d3.scale.category10().range(),
           dispatch: {
               stateChange: function(e){ console.log("stateChange"); },
               changeState: function(e){ console.log("changeState"); },

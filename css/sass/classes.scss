@@ -1,3 +1,4 @@
+
 .btn {
   @include colors($pointdark, $pointyellow);
   border: none;
@@ -15,6 +16,8 @@
 .btn2 {
   right: 120px;
 }
+
+
 
 .demoButton {
   @include colors($pointyellow, $pointdark);
@@ -36,16 +39,18 @@
 }
 
 .dashButton {
-  @include colors($pointyellow, $pointdark);
+    @include colors($pointdark, $pointyellow);
   border-radius: 15px;
   border: 1px solid $pointyellow;
   border: none;
   padding: 15px;
+  float: right;
   &:focus {
     outline:0;
   }
   &:hover{
-    @include colors($pointdark, $pointyellow);
+      @include colors($pointyellow, $pointdark);
+
     border: 1px solid $pointdark
   }
 }
@@ -58,6 +63,10 @@
   height: 90vh;
   background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/bb/Alternative_Energies.jpg');
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .introP {
@@ -65,6 +74,7 @@
   width: 60%;
   text-align: center;
   display: flex;
+
   align-items: center;
   height: auto;
   margin-bottom: 40px;
@@ -89,7 +99,7 @@
   background-color: rgba($pointdark, 0.6);
   margin-left: 20px;
   padding: 20px;
-  width: 50%;
+  width: 50vw;
 }
 
 label {
@@ -103,11 +113,15 @@ input {
 select {
   display: block;
   margin-bottom: 10px;
+  margin: 0 auto;
+}
+
+.alignCenter {
+  text-align: center;
 }
 
 .demoSection {
   background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/bb/Alternative_Energies.jpg');
-  display: block;
   background-size: cover;
   height: 90vh;
   h1 {
@@ -138,7 +152,7 @@ select {
 
 .demoFormAlign {
   display: inline-block;
-  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .green {
@@ -161,6 +175,11 @@ select {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.dashFormAlign {
+  display: flex;
+  justify-content: center;
 }
 
 .tt-menu {
@@ -186,15 +205,6 @@ border-radius: 5px;
   background-color: #0097cf;
 
 }
-
-
-
-// .tt-highlight {
-//   &:hover {
-//     background-color: red;
-//   }
-// }
-
 
 // ANIMATIONS //
 

@@ -4,6 +4,10 @@
 @import "font";
 @import "classes";
 
+a {
+    text-decoration: none;
+}
+
 header {
   color: $pointlightblue;
   display: flex;
@@ -38,10 +42,10 @@ main {
   }
 }
 
+
 section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   height: 100vh;
 }

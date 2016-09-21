@@ -4,11 +4,15 @@
 
 <!-- FORM FOR GRAPH INFO -->
 
+
 <div ng-controller='TypeaheadController' >
   <img src='images/formLoadSmall.gif' id='loadGif' ng-if='!exampleOptions' alt='loading'>
+
 <form ng-if='exampleOptions' class='demoForm' name='dashForm' ng-submit='formSubmit(form)'>
-  <label for='year'> Starting Year: </label>
-  <select ng-model='form.year' class='demoYear'>
+  <article class='dashFormAlign'>
+    <div>
+  <label class='alignCenter' for='year'> Starting Year: </label>
+  <select ng-model='form.year' class='demoYear' required>
     <option value='2007'> 2007 </option>
     <option value='2008'> 2008 </option>
     <option value='2009'> 2009 </option>
@@ -17,11 +21,12 @@
     <div>
     <div class="demoFormAlign">
       <label for='company1'> Company 1</label>
-      <input class="sfTypeahead demoCompany" options="exampleOptions" datasets="exampleData" ng-model='form.data[0]' type='text'>
+      <input class="sfTypeahead demoCompany" options="exampleOptions" datasets="exampleData" ng-model='form.data[0]' type='text' required>
     </div>
     <div class="demoFormAlign">
       <label for='weight1'> Weight</label>
       <input ng-model='form.weight[1]' class='demoWeight' type='number'>
+    </div>
     </div>
     <div>
     <div class="demoFormAlign">
@@ -32,6 +37,7 @@
       <label for='weight2'> Weight</label>
       <input ng-model='form.weight[2]' class='demoWeight' type='number'>
     </div>
+    </div>
     <div>
     <div class="demoFormAlign">
       <label for='company3'> Company 3</label>
@@ -40,6 +46,7 @@
     <div class="demoFormAlign">
       <label for='weight3'> Weight</label>
       <input ng-model='form.weight[3]' class='demoWeight' type='number'>
+    </div>
     </div>
     <div>
     <div class="demoFormAlign">
@@ -50,6 +57,7 @@
       <label for='weight4'> Weight</label>
       <input ng-model='form.weight[4]' class='demoWeight' type='number'>
     </div>
+    </div>
     <div>
     <div class="demoFormAlign">
       <label for='company5'> Company 5</label>
@@ -59,21 +67,20 @@
       <label for='weight5'> Weight</label>
       <input ng-model='form.weight[5]' class='demoWeight' type='number'>
     </div>
+  </div>
+<br>
 <button
  class='dashButton'
  ng-class='{hideButton: form.weight[1] + form.weight[2] + form.weight[3] + form.weight[4] + form.weight[5] !== 100}'
  type='submit'> Submit </button>
+ <h6> *weights must equal 100% </h6>
+ </div>
+ </article>
 </form>
-</div>
-<h6> *weights must equal 100% </h6>
-</section>
-<!-- <section class='chart'>
-  <nvd3 options="options" data="data"></nvd3>
-</section>
 
-<section class='chart'>
-  <nvd3 options='options2' data='data2'></nvd3>
-</section> -->
+</div>
+
+</section>
 
 <section class='chart'>
   <nvd3 options='options3' data='scienceData'></nvd3>
