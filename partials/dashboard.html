@@ -12,12 +12,13 @@
   <article class='dashFormAlign'>
     <div>
   <label class='alignCenter' for='year'> Starting Year: </label>
-  <select ng-model='form.year' class='demoYear' required>
-    <option value='2007'> 2007 </option>
+  <select ng-model='form.year' class='demoYear' required ng-options='option.value as option.name for option in yearOptions'></select>
+  <!-- <select ng-model='form.year' class='demoYear' required="required">
+    <option value='2007' ng-selected="selected"> 2007 </option>
     <option value='2008'> 2008 </option>
     <option value='2009'> 2009 </option>
     <option value='2010'> 2010 </option>
-  </select>
+  </select> -->
     <div>
     <div class="demoFormAlign">
       <label for='company1'> Company 1</label>
@@ -78,6 +79,12 @@
  </article>
 </form>
 
+</div>
+<div ng-if='portfolio.length > 0' class='noDataDiv'>
+  <h3> Data not available for: </h3>
+  <h4 ng-repeat='company in portfolio'>
+  {{company.key}}
+  </h4>
 </div>
 
 </section>

@@ -24,7 +24,6 @@ angular
 // DATABASE CALL WITH SCIENCE BASE YEAR AND COMPANIES FROM FORM
 
       return $q.all(promises).then(function(data) {
-        console.log(data)
 
 // INSERT WEIGHTS INTO EACH COMPANY DATA
 
@@ -34,13 +33,17 @@ angular
 
         var sciencebase = data[0].data.data[0];
         var year = parseFloat(sciencebase.year);
-        var result = [];
+        var finalData = {
+          result: [],
+          noData: []
+        };
         var values = [];
         var numerator = {};
         var numeratorBaseYr = {};
         var numeratorTargetYr = {};
         var numeratorGap = {};
         var denominator = {};
+        var denominatorTarget = 0;
         var portfolio = [];
         var baseNumber = 0;
         var scienceBaseStart = 0;
@@ -54,10 +57,10 @@ angular
 
 // SET GRAPH START VALUE TO CURRENT SCIENCE BASE VALUE.
 
-            for (var i = 0; i < result[0].values.length; i++) {
-              if (result[0].values[i].x == key) {
-                scienceBaseStart = result[0].values[i].y;
-                values.push({x: key, y: result[0].values[i].y});
+            for (var i = 0; i < finalData.result[0].values.length; i++) {
+              if (finalData.result[0].values[i].x == key) {
+                scienceBaseStart = finalData.result[0].values[i].y;
+                values.push({x: key, y: scienceBaseStart});
               }
             }
 
@@ -91,39 +94,49 @@ angular
               }
               }
           });
-          result.push({values: values, key: companyName});
+          if(values.length < 1) {
+            finalData.noData.push({key: companyName})
+          } else {
+          finalData.result.push({values: values, key: companyName});
           values = [];
           baseNumber = 0;
+          }
         };
 
         getPorfolioData = function() {
-          Object.keys(numerator).forEach(function(key) {
-            values.push({x:key, y: (numerator[key] / denominator[key])});
-          });
-            result.push({values: values, key: 'Portfolio'});
+          if (finalData.result.length > 1) {
+            Object.keys(numerator).forEach(function(key) {
+              values.push({x:key, y: (numerator[key] / denominator[key])});
+            });
+              finalData.result.push({values: values, key: 'Portfolio'});
+          }
         };
 
         getTargetData = function() {
+          if (finalData.result.length > 1) {
             targetBaseYear = (Math.round(numeratorBaseYr / denominatorTarget));
             console.log((numeratorGap / denominatorTarget) / 100);
             targetGap = (numeratorGap / denominatorTarget) / 100;
             targetYear = Math.round(numeratorTargetYr / denominatorTarget);
-            for (var i = 0; i < result[0].values.length; i++) {
-              if (result[0].values[i].x == targetYear) {
-                targetYearValue = result[0].values[i].y * targetGap;
+            var targetYearValue;
+            for (var i = 0; i < finalData.result[0].values.length; i++) {
+              if (finalData.result[0].values[i].x == targetYear) {
+                targetYearValue = finalData.result[0].values[i].y * targetGap;
               }
             }
-            result.push(
+
+            finalData.result.push(
               { values:[{ x: targetBaseYear, y: 0},{ x: targetYear, y: targetYearValue}],
                 key: 'Target'
             });
-        };
+        }
+      };
 
 
         sciencebase.target.forEach(function(item, index) {
           values.push({x: year + index, y: parseFloat(item)});
         });
-        result.push({values: values, key: 'Science Base'});
+        finalData.result.push({values: values, key: 'Science Base'});
         values = [];
 
 // LOOP THROUGH COMPANIES TO GET GRAPH DATA
@@ -146,7 +159,7 @@ angular
     }
         getPorfolioData();
         getTargetData();
-        return result;
+        return finalData;
     });
     }
 

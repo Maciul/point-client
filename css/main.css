@@ -521,6 +521,10 @@ select {
   display: flex;
   justify-content: center; }
 
+.noDataDiv {
+  background-color: rgba(17, 40, 52, 0.6);
+  padding: 0px 20px; }
+
 .tt-menu {
   background-color: #d9e8a5;
   color: #112834;

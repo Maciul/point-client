@@ -5,15 +5,24 @@ angular
     $scope.greeting = 'Hola!';
     $scope.scienceData = [];
     $scope.form = {};
-    $scope.portfolio = [];
+    $scope.yearOptions = [
+        { name: '2007', value: '2007' },
+        { name: '2008', value: '2008' },
+        { name: '2009', value: '2009' },
+        { name: '2010', value: '2010' }
+        ];
+
+    $scope.form = {year : $scope.yearOptions[0].value};
 
 
     $scope.formSubmit = function(form) {
       console.log(form)
-      $scope.portfolio = form.data;
       DashboardService.formSubmit(form).then(function(data) {
-        $scope.scienceData = data;
+        console.log(data.noData)
+        $scope.portfolio = data.noData;
+        $scope.scienceData = data.result;
         $scope.form = {};
+        $scope.form = {year : $scope.yearOptions[0].value};
       });
     };
 
