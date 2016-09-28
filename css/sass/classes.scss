@@ -74,7 +74,6 @@
   width: 60%;
   text-align: center;
   display: flex;
-
   align-items: center;
   height: auto;
   margin-bottom: 40px;
@@ -185,6 +184,10 @@ select {
 .noDataDiv {
   background-color: rgba(17, 40, 52, 0.6);
   padding: 0px 20px;
+  position: absolute;
+  left: 0px;
+  top: 50vh;
+  transform: translate(0%, -50%);
 }
 
 .tt-menu {
