@@ -97,7 +97,7 @@
 .demoForm {
   background-color: rgba($pointdark, 0.6);
   margin-left: 20px;
-  padding: 20px;
+  padding: 5px;
   width: 50vw;
 }
 
@@ -179,6 +179,12 @@ select {
 .dashFormAlign {
   display: flex;
   justify-content: center;
+}
+
+.formInstruction {
+  border-bottom: 1px solid;
+  margin-bottom: 10px;
+  font-size: 18px;
 }
 
 .noDataDiv {

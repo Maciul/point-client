@@ -451,7 +451,7 @@ textarea {
 .demoForm {
   background-color: rgba(17, 40, 52, 0.6);
   margin-left: 20px;
-  padding: 20px;
+  padding: 5px;
   width: 50vw; }
 
 label {
@@ -520,6 +520,11 @@ select {
 .dashFormAlign {
   display: flex;
   justify-content: center; }
+
+.formInstruction {
+  border-bottom: 1px solid;
+  margin-bottom: 10px;
+  font-size: 18px; }
 
 .noDataDiv {
   background-color: rgba(17, 40, 52, 0.6);
@@ -595,26 +600,22 @@ header {
   color: #A3D9D5;
   display: flex;
   align-items: center;
-  background-color: #d9e8a5;
+  background-color: #2D5F79;
   min-height: 10%; }
-  header h1 {
-    font-size: 1.5em;
-    display: inline;
-    font-family: 'Josefin Slab', serif;
-    color: #112834; }
   header .logo {
-    width: 45px;
-    margin: 0px 20px; }
+    width: 342px;
+    height: 112px;
+    background-color: white; }
 
 body {
   background-color: #112834; }
 
 main {
   color: #d9e8a5;
-  font-family: 'Raleway','Roboto', sans-serif; }
+  font-family: Calibri, 'Gill Sans', Arial, Verdana, sans-serif;
+  font-size: 1.5em; }
   main p {
-    color: #112834;
-    font-size: 1.1em; }
+    color: #112834; }
 
 section {
   display: flex;

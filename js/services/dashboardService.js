@@ -136,7 +136,7 @@ angular
         sciencebase.target.forEach(function(item, index) {
           values.push({x: year + index, y: parseFloat(item)});
         });
-        finalData.result.push({values: values, key: 'Science Base'});
+        finalData.result.push({values: values, key: 'Science Basis'});
         values = [];
 
 // LOOP THROUGH COMPANIES TO GET GRAPH DATA

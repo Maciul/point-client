@@ -37,7 +37,7 @@ angular
               left: 100
           },
           x: function(d){ return d.x; },
-          y: function(d){ return d.y; },
+          y: function(d){ return Math.round(d.y * 10) / 10; },
           useInteractiveGuideline: true,
           duration: 1500,
           forceY:([-10, 10]),
@@ -50,12 +50,12 @@ angular
               tooltipHide: function(e){ console.log("tooltipHide"); }
           },
           xAxis: {
-              axisLabel: 'Target Year',
+              axisLabel: 'Year',
           },
           yAxis: {
-              axisLabel: 'Cumulative Reduction',
+              axisLabel: 'Cumulative Change in GHG Emissions Intensity',
               tickFormat: function(d) {
-                return d3.format(',.2f')(d);
+                return d3.format(',.f')(d) + '%';
               },
               axisLabelDistance: 10,
           },
@@ -67,7 +67,7 @@ angular
       },
       title: {
           enable: true,
-          text: 'Science Base vs Portfolio',
+          text: 'Investment Portfolio Relative to Science-Based Trajectory',
           css: {
             color: 'darkblue',
             padding: '10px',
