@@ -13,11 +13,11 @@ header {
   display: flex;
   align-items: center;
   background-color: $pointblue;
-  min-height: 10%;
+  height: 10vh;
 
   .logo {
-    width: 342px;
-    height: 112px;
+    width: auto;
+    height: 100%;
     background-color: white;
     }
 }
@@ -30,9 +30,11 @@ body {
 main {
   color: $pointyellow;
   font-family: Calibri, 'Gill Sans', Arial, Verdana, sans-serif;
-  font-size: 1.5em;
   p {
     color: $pointdark;
+  }
+  ul {
+    font-size: 14px;
   }
 }
 
