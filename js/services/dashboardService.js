@@ -121,7 +121,7 @@ angular
             Object.keys(numerator).forEach(function(key) {
               values.push({x:key, y: (numerator[key] / denominator[key])});
             });
-              finalData.result.push({values: values, key: 'Performance'});
+              finalData.result.splice(1,0,{values: values, key: 'Performance'});
           }
         };
 
@@ -143,19 +143,24 @@ angular
                 targetLineStart = scienceBaseStart;
               }
             }
-            finalData.result.push(
+            finalData.result.splice(1, 0,
               { values:[{ x: targetBaseYear, y: targetLineStart},{ x: targetYear, y: targetYearValue}],
-                key: 'Target'
+                key: 'Target',
               });
             }
         };
 
 
-        sciencebase.target.forEach(function(item, index) {
+        getScienceBasisData = function() {
+          sciencebase.target.forEach(function(item, index) {
           values.push({x: year + index, y: parseFloat(item)});
         });
         finalData.result.push({values: values, key: 'Science Basis'});
         values = [];
+      };
+
+
+        getScienceBasisData();
 
 // LOOP THROUGH COMPANIES TO GET GRAPH DATA
 
@@ -175,9 +180,9 @@ angular
         getCompanyGraphData();
       }
     }
-        getScienceBaseLine();
         getPorfolioData();
         getTargetData();
+
         return finalData;
     });
     }
