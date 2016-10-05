@@ -16,13 +16,11 @@ angular
 
 
     $scope.formSubmit = function(form) {
-      console.log(form)
       DashboardService.formSubmit(form).then(function(data) {
         console.log(data)
         $scope.portfolio = data.noData;
         $scope.scienceData = data.result;
-        $scope.form = {};
-        $scope.form = {year : $scope.yearOptions[0].value};
+        // $scope.form = {year : $scope.yearOptions[0].value};
       });
     };
 

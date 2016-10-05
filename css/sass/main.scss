@@ -12,19 +12,17 @@ header {
   color: $pointlightblue;
   display: flex;
   align-items: center;
-  background-color: $pointblue;
+  background-color: #324754;
   height: 10vh;
 
   .logo {
     width: auto;
     height: 100%;
-    background-color: white;
     }
 }
 
 body {
   background-color: $pointdark;
-  // overflow: hidden;
 }
 
 main {
