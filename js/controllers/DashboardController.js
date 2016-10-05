@@ -18,7 +18,7 @@ angular
     $scope.formSubmit = function(form) {
       console.log(form)
       DashboardService.formSubmit(form).then(function(data) {
-        console.log(data.noData)
+        console.log(data)
         $scope.portfolio = data.noData;
         $scope.scienceData = data.result;
         $scope.form = {};
