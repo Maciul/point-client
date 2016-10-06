@@ -66,14 +66,11 @@ angular
           text: 'Investment Portfolio Relative to Science-Based Trajectory',
           css: {
             color: 'darkblue',
-            padding: '10px',
             'font-size': '1.5rem',
-            position: 'absolute',
             'margin-left': '10vw',
-
+            position: 'absolute',
+            'margin-top': '5vh'
           }
       },
-
   };
-
 }]);
