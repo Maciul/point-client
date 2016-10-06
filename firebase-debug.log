@@ -1,0 +1,71 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /usr/local/Cellar/node/5.10.1/bin/node /usr/local/bin/firebase deploy
+[debug] CLI Version:  3.0.1
+[debug] Platform:     darwin
+[debug] Node Version: v5.10.1
+[debug] Time:         Thu Oct 06 2016 12:13:19 GMT-0600 (MDT)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/point-380 
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/point-380/tokens 
+[error] 
+[error] Error: An unknown error occurred. Please contact support.
+[debug] Error Context: {
+  "requestOptions": {
+    "method": "GET",
+    "json": true,
+    "url": "https://admin.firebase.com/v1/database/point-380/tokens",
+    "headers": {
+      "authorization": "Bearer ya29.CjN0A6-tXL8pnCTuxc2WdhCZ3avHhCJLvQgtf4ADdkyxh7mCzEveB__DObbrrHRC6PPhAIA"
+    }
+  },
+  "body": {
+    "error": {
+      "code": "UNKNOWN_ERROR",
+      "message": "An unknown error occurred. Please contact support."
+    }
+  },
+  "response": {
+    "statusCode": 500,
+    "body": {
+      "error": {
+        "code": "UNKNOWN_ERROR",
+        "message": "An unknown error occurred. Please contact support."
+      }
+    },
+    "headers": {
+      "server": "nginx",
+      "date": "Thu, 06 Oct 2016 18:13:25 GMT",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "97",
+      "connection": "close",
+      "x-content-type-options": "nosniff"
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "admin.firebase.com",
+        "port": 443,
+        "hostname": "admin.firebase.com",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/v1/database/point-380/tokens",
+        "path": "/v1/database/point-380/tokens",
+        "href": "https://admin.firebase.com/v1/database/point-380/tokens"
+      },
+      "method": "GET",
+      "headers": {
+        "authorization": "Bearer ya29.CjN0A6-tXL8pnCTuxc2WdhCZ3avHhCJLvQgtf4ADdkyxh7mCzEveB__DObbrrHRC6PPhAIA",
+        "accept": "application/json"
+      }
+    }
+  }
+}
