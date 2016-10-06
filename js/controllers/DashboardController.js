@@ -16,11 +16,10 @@ angular
 
 
     $scope.formSubmit = function(form) {
+      console.log(form.year)
       DashboardService.formSubmit(form).then(function(data) {
-        console.log(data)
         $scope.portfolio = data.noData;
         $scope.scienceData = data.result;
-        // $scope.form = {year : $scope.yearOptions[0].value};
       });
     };
 
@@ -39,7 +38,6 @@ angular
           useInteractiveGuideline: true,
           duration: 1500,
           forceY:([-10, 10]),
-
           color: d3.scale.category10().range(),
           dispatch: {
               stateChange: function(e){ console.log("stateChange"); },
