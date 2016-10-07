@@ -53,10 +53,6 @@
   }
 }
 
-.section2 {
-  background-color: white;
-}
-
 .intro {
   height: 90vh;
   background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/bb/Alternative_Energies.jpg');
@@ -82,21 +78,11 @@
   background-color: $pointyellow;
 }
 
-.mainForm {
-  position: fixed;
-  top: 100px;
-  right: 0px;
-  background-color: #d9e8a5;
-  padding: 20px;
-  color: #112834;
-  font-weight: 600;
-}
-
 .demoForm {
   background-color: rgba($pointdark, 0.6);
   margin-left: 20px;
   padding: 5px;
-  width: 50vw;
+  width: 60vw;
 }
 
 label {
@@ -156,16 +142,6 @@ select {
   margin-left: 10px;
 }
 
-.green {
-  color: green;
-  margin: 0;
-}
-
-.red {
-  color: red;
-  margin: 0;
-}
-
 .hideButton {
   opacity: 0.65;
   cursor: not-allowed;
@@ -221,16 +197,6 @@ border-radius: 5px;
   color: #fff;
   background-color: #0097cf;
 }
-
-// g.nv-group.nv-series-0 > path {
-//   stroke-width: 3;
-// }
-// g.nv-group.nv-series-1 > path {
-//   stroke-width: 3;
-// }
-// g.nv-group.nv-series-2 > path {
-//   stroke-width: 3;
-// }
 
 .dashed {
           stroke-dasharray: 5,5;

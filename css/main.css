@@ -414,9 +414,6 @@ textarea {
     background-color: #112834;
     border: 1px solid #112834; }
 
-.section2 {
-  background-color: white; }
-
 .intro {
   height: 90vh;
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/b/bb/Alternative_Energies.jpg");
@@ -439,20 +436,11 @@ textarea {
   display: block;
   background-color: #d9e8a5; }
 
-.mainForm {
-  position: fixed;
-  top: 100px;
-  right: 0px;
-  background-color: #d9e8a5;
-  padding: 20px;
-  color: #112834;
-  font-weight: 600; }
-
 .demoForm {
   background-color: rgba(17, 40, 52, 0.6);
   margin-left: 20px;
   padding: 5px;
-  width: 50vw; }
+  width: 60vw; }
 
 label {
   margin-bottom: 10px;
@@ -501,14 +489,6 @@ select {
   display: flex;
   justify-content: space-between;
   margin-left: 10px; }
-
-.green {
-  color: green;
-  margin: 0; }
-
-.red {
-  color: red;
-  margin: 0; }
 
 .hideButton {
   opacity: 0.65;
@@ -631,6 +611,6 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh; }
+  min-height: 90vh; }
 
 /*# sourceMappingURL=main.css.map */
