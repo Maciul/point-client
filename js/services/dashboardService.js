@@ -121,7 +121,7 @@ angular
             Object.keys(numerator).forEach(function(key) {
               values.push({x:key, y: (numerator[key] / denominator[key])});
             });
-              finalData.result.splice(1,0,{values: values, key: 'Performance'});
+              finalData.result.splice(1,0,{values: values, key: 'Performance', classed: 'thick'});
           }
         };
 
@@ -146,6 +146,7 @@ angular
             finalData.result.splice(1, 0,
               { values:[{ x: targetBaseYear, y: targetLineStart},{ x: targetYear, y: targetYearValue}],
                 key: 'Target',
+                classed: 'thick'
               });
             }
         };
@@ -155,7 +156,7 @@ angular
           sciencebase.target.forEach(function(item, index) {
           values.push({x: year + index, y: parseFloat(item)});
         });
-        finalData.result.push({values: values, key: 'Science Basis'});
+        finalData.result.push({values: values, key: 'Science Basis', classed: 'dashed'});
         values = [];
       };
 

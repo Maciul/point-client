@@ -66,7 +66,7 @@ angular
           text: 'Investment Portfolio Relative to Science-Based Trajectory',
           css: {
             color: 'darkblue',
-            'font-size': '1.5rem',
+            'font-size': '1.1rem',
             'margin-left': '10vw',
             position: 'absolute',
             'margin-top': '5vh'

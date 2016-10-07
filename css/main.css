@@ -557,11 +557,11 @@ select {
   color: #fff;
   background-color: #0097cf; }
 
-g.nv-group.nv-series-0 > path {
-  stroke-width: 2.5; }
+.dashed {
+  stroke-dasharray: 5,5; }
 
-g.nv-group.nv-series-2 > path {
-  stroke-width: 2.5; }
+.thick > path {
+  stroke-width: 3; }
 
 .ng-hide-add {
   animation: 0.5s slideOutRight ease; }
