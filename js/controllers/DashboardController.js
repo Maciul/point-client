@@ -1,7 +1,7 @@
 angular
   .module("pointApp")
-  .controller('DashboardController', ['$scope','$location', 'DashboardService',
-  function($scope, $location, DashboardService) {
+  .controller('DashboardController', ['$scope','$location', 'DashboardService', '$anchorScroll',
+  function($scope, $location, DashboardService, $anchorScroll) {
     $scope.greeting = 'Hola!';
     $scope.scienceData = [];
     $scope.form = {};
@@ -11,13 +11,17 @@ angular
         { name: '2009', value: '2009' },
         { name: '2010', value: '2010' }
         ];
-
+    $scope.scrollTo = function() {
+      $location.hash('graph');
+      $anchorScroll();
+    };
     $scope.form = {year : $scope.yearOptions[0].value};
 
 
     $scope.formSubmit = function(form) {
-      console.log(form.year)
+      $scope.scrollTo();
       DashboardService.formSubmit(form).then(function(data) {
+        console.log(data)
         $scope.portfolio = data.noData;
         $scope.scienceData = data.result;
       });

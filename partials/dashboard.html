@@ -1,9 +1,7 @@
-
 <section class='demoSection'>
   <h1> Investor Dashboard </h1>
 
 <!-- FORM FOR GRAPH INFO -->
-
 
 <div ng-controller='TypeaheadController' >
   <img src='images/formLoadSmall.gif' id='loadGif' ng-if='!exampleOptions' alt='loading'>
@@ -90,6 +88,6 @@
 
 </section>
 
-<section class='chart'>
+<section id='graph' class='chart'>
   <nvd3 options='options3' data='scienceData'></nvd3>
 </section>

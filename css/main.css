@@ -601,9 +601,8 @@ body {
 
 main {
   color: #d9e8a5;
-  font-family: Calibri, 'Gill Sans', Arial, Verdana, sans-serif; }
-  main p {
-    color: #112834; }
+  font-family: "Calibri, " Gill Sans ", Arial, Verdana, sans-serif;" p;
+    font-family-color: #112834; }
   main ul {
     font-size: 14px; }
 
