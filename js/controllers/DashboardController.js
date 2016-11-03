@@ -21,7 +21,6 @@ angular
     $scope.formSubmit = function(form) {
       $scope.scrollTo();
       DashboardService.formSubmit(form).then(function(data) {
-        console.log(data)
         $scope.portfolio = data.noData;
         $scope.scienceData = data.result;
       });
